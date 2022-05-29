@@ -73,6 +73,6 @@ export const check = async ctx => {
   ctx.body = user 
 }
 export const logout = async ctx => {
-  ctx.cookies.set('access_token')
+  ctx.cookies.set('access_token') // access_token 을 초기화하면 jwtMiddleware 함수에서 사용자 정보가 사라진다. 
   ctx.status = 204 // No Content 
 }

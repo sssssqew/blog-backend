@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/user'
 
+// ctx.state 에 user 정보를 디코딩해서 담음
 const jwtMiddleware = async (ctx, next) => {
   const token = ctx.cookies.get('access_token')
   if(!token) return next()
